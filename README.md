@@ -115,5 +115,5 @@ Video
 -----
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Yah3ViEggxA"
-target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+target="_blank"><img src="http://img.youtube.com/vi/Yah3ViEggxA/0.jpg" 
+alt="arduino interfacing with simm ram module" width="240" height="180" border="10" /></a>
