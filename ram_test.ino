@@ -1,9 +1,9 @@
 #include "ram.h"
 
 /* 
- * RAM test : Test a SIMM RAM module with the ram library
+ * RAM test : Test a SIMM RAM module with the ram library for Arduino
  *
- * Copyright (C) 2014 Rafael Ignacio Zurita <rizurita@yahoo.com>
+ * Copyright (C) 2014 Rafael Ignacio Zurita <rafaelignacio.zurita@gmail.com>
  *
  *  This ram test is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -28,31 +28,31 @@ char st[] = "This is a test\n";
 
 void setup()  {
 
-	ramInit();
+	ram_init();
   
 
 	/* write 4K */
 	for (i=0;i<64;i++)
 	for (j=0;j<64;j++)
-		ramWrite(i, j, j);
+		ram_write(i, j, j);
 
 	/* read 4K */
 	for (i=0;i<64;i++)
 	for (j=0;j<64;j++)
-		ramRead(i, j, &buf);
+		buf = ram_read(i, j);
 
 	/* write at row=62 the text "This is a text\n" */
 	for (i=0;i<strlen(st);i++)
-		ramWrite(62,i, (unsigned char) st[i]);
+		ram_write(62, i, (unsigned char) st[i]);
 
 	/* read row=62 */
 	for (i=0;i<strlen(st);i++)
-		ramRead(62,i, &v[80+i]);
+		v[80+i] = ram_read(62, i);
 
 
 	/* read row=63 */
 	for (i=0;i<64;i++)
-		ramRead(63,i, &v[i]);
+		v[i] = ram_read(63, i);
 
 
 	/* stop ram interrupts */
@@ -67,7 +67,6 @@ void setup()  {
 
 	sprintf(texto, "Testing RAM readings : %s", &v[80]);
 	Serial.println(texto);
-
 }
 
 
