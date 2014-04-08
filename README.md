@@ -46,14 +46,14 @@ data most of the time. It means that your sketches (programs) could run slow.
 Also, we need to use most of the Arduino pins to be soldered with SIMM RAM pins
 so there will be just few available extra pins for your project.
 
-Connect the 30-pin SIMM RAM like schematic.txt file explains.
+ 1. Connect the 30-pin SIMM RAM like schematic.txt file explains.
 
-Copy the ram/ directory under sketchbook/libraries/.
+ 2. Copy the ram/ directory under sketchbook/libraries/.
 If you prefer using the avr assembler version for better performance
 copy the files under avr-asm-ram-version/* instead. Read the REAMDE
 file there as well.
 
-The usage of the RAM is easy. In your main code (or sketch) call ram_init()
+ 3. The usage of the RAM is easy. In your main code (or sketch) call ram_init()
 just once, and then ram_write() and ram_read() to store and recover
 data from SIMM RAM.
 
