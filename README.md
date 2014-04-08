@@ -59,6 +59,7 @@ data from SIMM RAM.
 Example
 -------
 
+```
 ram_init();
 ram_write(1, 2, 7);		/*# row=1, col=2, store byte = 7 */
 
@@ -71,6 +72,7 @@ for (i=0, i<strlen(gb), i++)
 c = ram_read(1, 2);		/* restore byte = 7 from row=1, col=2 */
 d = ram_read(2, 0);		/* restore letter "G" from row=2, col=0 */
 	
+```
 
 You can use the ram_test.ino as example for using your 30-pin simm ram.
 
