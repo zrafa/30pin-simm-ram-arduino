@@ -22,10 +22,8 @@ http://dmitry.co/
 
 That said I need to clarify that this assembler version is a modified
 version, because both MCUs are different. atmega328p has less pins, and
-it is slower than Dmitry work because Arduino has just a 16Mhz clock.
-Also, the Dmitry version did not work with atmega328, so that version
-will not work with simm ram modules and Arduino if you do not modify 
-the code like we did here.
+it is slower than Dmitry's project, because Arduino has just a 16Mhz clock.
+Also, the Dmitry version does not work with atmega328 without several changes.
 
 In order to have a proper working code I needed to read the datasheets.
 I studied the KM41C4000D, KM41V4000D CMOS DRAM datasheet and other sources like 
