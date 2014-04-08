@@ -10,6 +10,7 @@ This work was inspired and based for the great hack to run Linux
 on a 8bit MCU by Dmitry Grinberg
 http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit
 
+The code is also based in the __KM41C4000D 4M x 1Bit CMOS Dynamic RAM datasheet__ http://pdf.datasheetcatalog.com/datasheets/400/250350_DS.pdf
 
 Introduction
 ------------
@@ -110,6 +111,7 @@ http://www.pjrc.com/mp3/simm/datasheet.html
 and
 http://www.pjrc.com/mp3/simm/simm.html
 
+__KM41C4000D 4M x 1Bit CMOS Dynamic RAM datasheet__ http://pdf.datasheetcatalog.com/datasheets/400/250350_DS.pdf
 
 Pics
 ----
