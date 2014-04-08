@@ -39,7 +39,7 @@ Pin #	Name	Signal Description		Arduino Pin
 30-pin SIMM Memory Module		Arduino
 Address pin 0 to 5 (A0..A5)		PORTB (digital pin 8..13)
 Address pin 6 to 11 (A6..A11)		GND
-Data pin 0 to 7 (DQ0..DQ7)		PORTD (digital pin 0..7)
+Data pin 0 to 7 (DQ0..DQ7)		PORTD (digital pin 7..0) (in that order, DQ0-pin7, DQ1-pin6, DQ2-pin5...DQ7-pin0)
 The others will be not connected.
 
 
