@@ -37,7 +37,7 @@ void __vector_13() {
 	}while(--cycles);
 }
 
-void ram_read(unsigned char row, unsigned char col) {
+unsigned char ram_read(unsigned char row, unsigned char col) {
 	
 	unsigned char buf;
 
