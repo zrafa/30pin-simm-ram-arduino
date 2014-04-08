@@ -1,0 +1,51 @@
+
+Solder the 30-pin simm ram module pins with Arduino pins like detailed below :
+
+
+30-pin SIMM Memory Module
+Pin #	Name	Signal Description		Arduino Pin
+1	VCC	+5 VDC				+5 VCC
+2	/CAS	Column Address Strobe		analog pin 0
+3	DQ0	Data 0				
+4	A0	Address 0	
+5	A1	Address 1	
+6	DQ1	Data 1	
+7	A2	Address 2	
+8	A3	Address 3	
+9	VSS	Ground				GND
+10	DQ2	Data 2	
+11	A4	Address 4	
+12	A5	Address 5	
+13	DQ3	Data 3	
+14	A6	Address 6	
+15	A7	Address 7	
+16	DQ4	Data 4
+17	A8	Address 8
+18	A9	Address 9
+19	A10	Address 10
+20	DQ5	Data 5
+21	/WE	Write Enable			analog pin 1
+22	VSS	Ground				
+23	DQ6	Data 6
+24	A11	Address 11
+25	DQ7	Data 7
+26	QP*	Data parity out			
+27	/RAS	Row Address Strobe		analog pin 2
+28	/CASP*	Parity Column Address Strobe	
+29	DP*	Data parity in			
+30	VCC	+5 VDC
+
+
+30-pin SIMM Memory Module		Arduino
+Address pin 0 to 5 (A0..A5)		PORTB (digital pin 8..13)
+Address pin 6 to 11 (A6..A11)		GND
+Data pin 0 to 7 (DQ0..DQ7)		PORTD (digital pin 0..7)
+The others will be not connected.
+
+
+This way you will have addresses of 6 bits for rows and 6 bits for columns.
+Addresses space will be 64rows x 64columns = 4096 addresses
+1 byte each = 4KB of space.
+
+If you need to use more RAM you can solder the 3 analog pins remaining
+with simm ram module pins A6, A7 and A8. It will give you 256 KB of RAM space.
