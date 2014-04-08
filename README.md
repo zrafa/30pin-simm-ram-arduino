@@ -3,6 +3,17 @@
 
 Library to interface with 30-pin simm ram using an atmega328p on Arduino
 
+Copyright (C) 2014 - Rafael Ignacio Zurita <rafaelignacio.zurita@gmail.com>
+LICENSE : read below.
+
+This work was inspired and based for the great hack to run Linux
+on a 8bit MCU by Dmitry Grinberg
+http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit
+
+
+Introduction
+------------
+
 This repo contains the library to interface with a 30-pin simm ram module,
 like the ones which were used in AT (286), 386, 486, Macintosh Plus, 
 Macintosh II, Quadra, Atari STE and Wang VS systems. Using an atmega328p on
@@ -11,15 +22,26 @@ Arduino.
 It will give you plenty of RAM to store and restore dynamic data 
 in your sketches.
 
+License
+-------
+
 The library has two versions : C and avr assembler version. Both for
 atmega328p (Arduino).
+
+Both version are free software, you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 2 as
+published by the Free Software Foundation.
+
+Read the LICENSE file for details.
+
+
+Usage
+-----
 
 WARNING: using this kind of RAM will put your CPU to refresh the SIMM RAM data
 most of the time. It means that your sketches (programs) could run slow.
 Also, we need to use most of the Arduino pins to be soldered with SIMM RAM pins
 so there will be just few available extra pins for your project.
-
-Usage :
 
 Connect the 30-pin SIMM RAM like schematic.txt file explains.
 
@@ -32,7 +54,8 @@ The usage of the RAM is easy. In your main code (or sketch) call ramInit()
 just once, and then ramRead() and ramWrite() to store and recover
 data from SIMM RAM.
 
-Example :
+Example
+-------
 
 ram_init();
 ram_write(1, 2, 7);		/*# row=1, col=2, store byte = 7 */
@@ -46,3 +69,17 @@ d = ram_read(2, 0);		/* restore letter "G" from row=2, col=0 */
 	
 
 You can use the ram_test.ino as example for using your 30-pin simm ram.
+
+
+References
+----------
+
+Dmitry code for atmega168 did not work as is.
+In order to have a proper working code we needed to read several
+datasheets. At least we studied the KM41C4000D, KM41V4000D CMOS DRAM 
+datasheet and other sources of RAM chips, like 
+
+http://www.pjrc.com/mp3/simm/datasheet.html 
+and
+http://www.pjrc.com/mp3/simm/simm.html
+
