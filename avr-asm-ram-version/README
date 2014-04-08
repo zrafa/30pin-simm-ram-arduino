@@ -1,0 +1,38 @@
+
+This avr assembler version here is 
+Copyright (c) 2014 - Rafael Ignacio Zurita <rafaelignacio.zurita@gmail.com>
+
+
+You can use this files for better performance than C version.
+Copy this files under sketchbook/libraries/ram/.
+
+
+WARNING:
+This version is a modified version of "Linux on an 8-bi micro"
+http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit
+which is authored by Dmitry Grinberg
+
+His License : 
+This code can be used for non-commercial purposes as long as you publish all code changes and this license file unmodified with them. If integrated in any hardware, the paperwork that comes with the hardware must include this notice.
+For commercial use terms, contact me.
+
+Dmitry Grinberg
+dmtirygr@gmail.com
+http://dmitry.co/
+--
+
+
+That said I need to clarify that this assembler version is a completely modified
+version, because both MCUs are very different. Moreover, the Dmitry version did
+not work, and I have serious doubts that code works with simm ram modules if you do
+not modify the code like I did here.
+
+In order to have a proper working code I needed to read the datasheets.
+I studied the KM41C4000D, KM41V4000D CMOS DRAM datasheet and other sources like 
+
+http://www.pjrc.com/mp3/simm/datasheet.html 
+and
+http://www.pjrc.com/mp3/simm/simm.html
+
+Rafael Ignacio Zurita
+rafaelignacio.zurita@gmail.com
