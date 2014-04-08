@@ -23,7 +23,7 @@ http://dmitry.co/
 
 
 That said I need to clarify that this assembler version is a completely modified
-version, because both MCUs are very different. Moreover, the Dmitry version did
+version, because both MCUs are different. Also, the Dmitry version did
 not work, and I have serious doubts that code works with simm ram modules if you do
 not modify the code like I did here.
 
