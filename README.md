@@ -60,15 +60,20 @@ Example
 -------
 
 ```
+#include "ram.h"
+...
+
 ram_init();
+
+/* write one byte to RAM */
 ram_write(1, 2, 7);		/*# row=1, col=2, store byte = 7 */
 
-/* write */
+/* write several bytes to RAM */
 char gb[] = "Good Bye!";
 for (i=0, i<strlen(gb), i++)
 	ram_write(2, i, gb[i]);	/* row=2, col=i, store byte = i of gb */
 
-/* read */
+/* read from RAM */
 c = ram_read(1, 2);		/* restore byte = 7 from row=1, col=2 */
 d = ram_read(2, 0);		/* restore letter "G" from row=2, col=0 */
 	
