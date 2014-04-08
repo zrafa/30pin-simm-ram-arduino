@@ -9,23 +9,22 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-extern void ramRead(unsigned long addr, unsigned char *b);
-extern void ramWrite(unsigned long addr, unsigned char val);
-extern void __vector_13();	//we call it directly :)
+extern unsigned char ram_read(unsigned long addr);
+extern void ram_write(unsigned long addr, unsigned char val);
+extern void __vector_13();	/* every 62ms timer interrupt calls this */
 
-void ramInit() {
+void ram_init() {
 	cli();
 
 		asm("cli");
 	
-	//timer
+	/* timer */
 	TCCR1A = 0x00;
 	TCCR1B = 0x0B;		//reset on match with OCR1A, clk= clk/64 -> overflow every 13.1 ms (faster than 4x as fast as we need to refresh)
 	OCR1A = 0x493E;		//match every 60ms
 	TIMSK1 = 2;		//interrupt when we match
 	
-	//RAM PORT
-
+	/* RAM PORT */
 	DDRB |= 0x3F;	//out: A0..A7
 	PORTB |=  0xC0;	//lo: A0..A7    - portb 0x25  -  
 	DDRC |= 0x04;	//out: nRAS
@@ -43,6 +42,7 @@ void ramInit() {
 	unsigned char t;
 	
 
+	/* init SIMM RAM */
 	_delay_us(200);	//as per init instructions
 	for(t = 0; t < 8; t++) __vector_13();
 	

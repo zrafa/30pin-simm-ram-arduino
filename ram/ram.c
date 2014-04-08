@@ -1,7 +1,7 @@
 /* 
  * Arduino RAM library : interface with 30-pin SIMM RAM modules
  *
- * Copyright (C) 2014 Rafael Ignacio Zurita <rizurita@yahoo.com>
+ * Copyright (C) 2014 Rafael Ignacio Zurita <rafaelignacio.zurita@gmail.com>
  *
  *  This ram test is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -37,8 +37,10 @@ void __vector_13() {
 	}while(--cycles);
 }
 
-void ramRead(unsigned char row, unsigned char col, unsigned char *buf) {
+void ram_read(unsigned char row, unsigned char col) {
 	
+	unsigned char buf;
+
 	cli();
 
 	PORTB = row;
@@ -50,13 +52,14 @@ void ramRead(unsigned char row, unsigned char col, unsigned char *buf) {
 	PORTC = PORTC | B00000100;	/* RAS = 1 */
 	PORTC = PORTC | B00000001;	/* CAS = 1 */
 
-	*buf = PIND;
+	buf = PIND;
 	sei();
-	
+
+	return buf;
 }
 
 
-void ramWrite(unsigned char row, unsigned char col, unsigned char val) {
+void ram_write(unsigned char row, unsigned char col, unsigned char val) {
 	
 	cli();
 
@@ -81,7 +84,7 @@ void ramWrite(unsigned char row, unsigned char col, unsigned char val) {
 	sei();
 }
 
-void ramInit() {
+void ram_init() {
 	cli();
 
 	asm("cli");
@@ -93,7 +96,6 @@ void ramInit() {
 	TIMSK1 = 2;		//interrupt when we match
 
 	/* conf RAM port */
-
 	DDRB |= 0x3F;	//out: A0..A7
 	PORTB |= 0xC0;	//lo: A0..A7    - portb 0x25  -  
 	DDRC |= 0x04;	//out: nRAS
@@ -110,6 +112,7 @@ void ramInit() {
 
 	unsigned char t;
 	
+	/* init SIMM RAM */
 	_delay_us(200);	//as per init instructions
 	for(t = 0; t < 8; t++) __vector_13();
 	

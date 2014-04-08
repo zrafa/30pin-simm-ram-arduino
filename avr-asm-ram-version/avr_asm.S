@@ -1,39 +1,40 @@
 
-.globl ramRead
-ramRead:
+; interface with 30-pin SIMM RAM using atmega328p on Arduino
+
+.globl ram_read
+ram_read:
 		
 	; argumentos de funciones r24 es byte 0, r25 byte 1, r22 byte 3, r23 byte4, etc
 	; r24 es fila (row)
 	; r22 es columna (col)
-	; Rafa r20 es buf
+	; REMOVED! r20 es buf
 	
-	movw r26, r20
-	
+	; movw r26, r20
 	
 	in r25, 0x3F	;r25 = SREG
 	cli
 	
-	out 0x05, r24	;PORTA = rB
-	cbi 0x08, 2	;PIND = (1 << 7)	;nRAS
+	out 0x05, r24	;PORTC = row
+	cbi 0x08, 2	;nRAS
 
-	out 0x05, r22	;PORTA = cB
+	out 0x05, r22	;PORTB = col
 	
-	cbi 0x08, 0	;PINB = (1 << 4)	;nCAS
+	cbi 0x08, 0	;nCAS
 	
-	sbi 0x08, 2	;PIND = (1 << 7)	;nRAS
-	sbi 0x08, 0	;PINB = (1 << 4)	;nCAS
+	sbi 0x08, 2	;nRAS
+	sbi 0x08, 0	;nCAS
 
-	; Rafa Leemos el dato y lo colocamos en el espacio buf
-	in r24, 0x09	;r24 = PINC
-	st X, r24
+	; Leemos el dato y lo colocamos en el espacio buf
+	in r24, 0x09	;r24 = PIND data
+	;st X, r24
 	
 	out 0x3F, r25	;restore SREG
-
 	
 	ret
 
-.globl ramWrite
-ramWrite:
+
+.globl ram_write
+ram_write:
 	
 	; argumentos de funciones r24 es byte 0, r25 byte 1, r22 byte 3, r23 byte4, etc
 	; r24 es fila (row)
@@ -44,25 +45,25 @@ ramWrite:
 	cli
 	
 	ldi r18, 0xFF
-	out 0x0A, r18	;PORTC is output
+	out 0x0A, r18	;PORTD is output
 	
-	out 0x05, r24	;PORTA = rB
-	cbi 0x08, 2	;PIND = (1 << 7)	;nRAS
+	out 0x05, r24	;PORTB = row
+	cbi 0x08, 2	;nRAS
 
-	out 0x0b, r20	;PORTC = val
+	out 0x0b, r20	;PORTD = val (data byte to store)
 
-	cbi 0x08, 1	;PINB = (1 << 5)	;nWE
+	cbi 0x08, 1	;nWE
 
-	out 0x05, r22	;PORTA = cB
-	cbi 0x08, 0	;PINB = (1 << 4)	;nCAS
+	out 0x05, r22	;PORTB = col
+	cbi 0x08, 0	;nCAS
 	
-	
-	sbi 0x08, 0	;PINB = (1 << 4)	;nCAS
-	sbi 0x08, 1	;PINB = (1 << 5)	;nWE
+
+	sbi 0x08, 0	;nCAS
+	sbi 0x08, 1	;nWE
 	nop
-	sbi 0x08, 2	;PIND = (1 << 7)	;nRAS
+	sbi 0x08, 2	;nRAS
 	
-	out 0x0A, r1	;PORTC is input
+	out 0x0A, r1	;PORTD is input
 	
 	out 0x3F, r25	;restore SREG
 	
@@ -83,11 +84,11 @@ __vector_13:
 	
 ramRefreshLoop:
 	
-	cbi 0x08, 0	;PINB = (1 << 4)	;nCAS
-	cbi 0x08, 2	;PIND = (1 << 7)	;nRAS
+	cbi 0x08, 0	;nCAS
+	cbi 0x08, 2	;nRAS
 	inc r25
-	sbi 0x08, 0	;PINB = (1 << 4)	;nCAS
-	sbi 0x08, 2	;PIND = (1 << 7)	;nRAS
+	sbi 0x08, 0	;nCAS
+	sbi 0x08, 2	;nRAS
 	
 	brne ramRefreshLoop
 	

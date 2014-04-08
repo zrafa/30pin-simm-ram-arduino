@@ -1,7 +1,7 @@
 /* 
  * Arduino RAM library : interface with 30-pin SIMM RAM modules
  *
- * Copyright (C) 2014 Rafael Ignacio Zurita <rizurita@yahoo.com>
+ * Copyright (C) 2014 Rafael Ignacio Zurita <rafaelignacio.zurita@gmail.com>
  *
  *  This ram test is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -20,10 +20,10 @@
 #ifndef RAM_H
 #define RAM_H
 
-void ramInit();
-void ramRead(unsigned char row, unsigned char col, unsigned char *b);
-void ramWrite(unsigned char row, unsigned char col, unsigned char val);
-void __vector_13();	//we call it directly :)
+void ram_init();
+unsigned char ram_read(unsigned char row, unsigned char col);
+void ram_write(unsigned char row, unsigned char col, unsigned char val);
+void __vector_13();	/* every 62ms the timer interrupts and will run this */
 	
 
 #endif /* RAM_H */
