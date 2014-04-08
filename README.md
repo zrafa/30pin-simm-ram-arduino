@@ -14,7 +14,7 @@ http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit
 Introduction
 ------------
 
-This repo contains the library to interface with a 30-pin simm ram module,
+This repo contains the library to interface with 30-pin simm ram modules,
 like the ones which were used in AT (286), 386, 486, Macintosh Plus, 
 Macintosh II, Quadra, Atari STE and Wang VS systems. Using an atmega328p on
 Arduino.
