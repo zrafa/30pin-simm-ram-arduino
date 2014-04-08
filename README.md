@@ -103,5 +103,10 @@ http://www.pjrc.com/mp3/simm/datasheet.html
 and
 http://www.pjrc.com/mp3/simm/simm.html
 
-<img src="https://github.com/zrafa/zrafa.github.io/blob/master/ram-atmega328p-arduino/ram-arduino2.jpg?raw=true" alt="simm ram and atmega328p" width="640" height="480">
+
+Pics
+----
+
+<img src="https://github.com/zrafa/zrafa.github.io/blob/master/ram-atmega328p-arduino/ram-arduino2.jpg?raw=true" alt="simm ram and atmega328p" width="400" height="300">
+<img src="https://github.com/zrafa/zrafa.github.io/blob/master/ram-atmega328p-arduino/ram-arduino.jpg?raw=true" alt="simm ram and atmega328p" width="400" height="300">
 
