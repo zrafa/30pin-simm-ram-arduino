@@ -3,17 +3,16 @@
 
 Library to interface with 30-pin simm ram using an atmega328p on Arduino
 
-Do you want to have plenty of RAM with your atmega328p (Arduino)?
-
 This repo contains the library to interface with a 30-pin simm ram module,
 like the ones which were used in AT (286), 386, 486, Macintosh Plus, 
 Macintosh II, Quadra, Atari STE and Wang VS systems. Using an atmega328p on
 Arduino.
 
+It will give you plenty of RAM to store and restore dynamic data 
+in your sketches.
+
 The library has two versions : C and avr assembler version. Both for
 atmega328p (Arduino).
-
-It will give you plenty of RAM to store dynamic data to your sketches.
 
 WARNING: using this kind of RAM will put your CPU to refresh the SIMM RAM data
 most of the time. It means that your sketches (programs) could run slow.
