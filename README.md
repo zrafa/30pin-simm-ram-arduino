@@ -39,8 +39,8 @@ Read the LICENSE file for details.
 Usage
 -----
 
-WARNING: using this kind of RAM will put your CPU to refresh the SIMM RAM data
-most of the time. It means that your sketches (programs) could run slow.
+WARNING: using this kind of RAM will put your Arduino CPU to refresh the SIMM RAM
+data most of the time. It means that your sketches (programs) could run slow.
 Also, we need to use most of the Arduino pins to be soldered with SIMM RAM pins
 so there will be just few available extra pins for your project.
 
