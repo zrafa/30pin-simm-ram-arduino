@@ -22,6 +22,7 @@ Arduino.
 It will give you extra RAM to store and restore dynamic data 
 in your sketches.
 
+__Pictures and Video__ : on the bottom
 
 License
 -------
@@ -33,7 +34,8 @@ Both version are free software, you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 2 as
 published by the Free Software Foundation.
 
-Read the LICENSE file for details.
+Read the LICENSE file for details, and the README file under the assembler
+version directory.
 
 
 Usage
