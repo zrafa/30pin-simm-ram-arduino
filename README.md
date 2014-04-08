@@ -51,8 +51,8 @@ If you prefer using the avr assembler version for better performance
 copy the files under avr-asm-ram-version/* instead. Read the REAMDE
 file there as well.
 
-The usage of the RAM is easy. In your main code (or sketch) call ramInit()
-just once, and then ramRead() and ramWrite() to store and recover
+The usage of the RAM is easy. In your main code (or sketch) call ram_init()
+just once, and then ram_write() and ram_read() to store and recover
 data from SIMM RAM.
 
 
