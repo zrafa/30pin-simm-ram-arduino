@@ -2,8 +2,8 @@
 This avr assembler version here is 
 Copyright (c) 2014 - Rafael Ignacio Zurita <rafaelignacio.zurita@gmail.com>
 
-You can use this files for better performance than C version.
-Copy this files under sketchbook/libraries/ram/.
+You can use these files for better performance than C version.
+Copy these files under sketchbook/libraries/ram/.
 
 
 WARNING:
