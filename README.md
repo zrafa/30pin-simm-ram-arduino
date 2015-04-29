@@ -8,12 +8,6 @@ LICENSE : read below.
 
 **This project got a got article in HACKADAY!** : http://hackaday.com/2014/04/09/using-simms-to-add-some-extra-ram-on-your-arduino-uno
 
-This work was inspired and based for the great hack to run Linux
-on a 8bit MCU by Dmitry Grinberg
-http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit
-
-The code is also based in the __KM41C4000D 4M x 1Bit CMOS Dynamic RAM datasheet__ http://pdf.datasheetcatalog.com/datasheets/400/250350_DS.pdf
-
 Introduction
 ------------
 
@@ -26,6 +20,12 @@ It will give you extra RAM to store and restore dynamic data
 in your sketches.
 
 __Pictures and Video__ : on the bottom
+
+This work was inspired and based for the great hack to run Linux
+on a 8bit MCU by Dmitry Grinberg
+http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit
+
+The code is also based in the __KM41C4000D 4M x 1Bit CMOS Dynamic RAM datasheet__ http://pdf.datasheetcatalog.com/datasheets/400/250350_DS.pdf
 
 License
 -------
