@@ -6,6 +6,8 @@ Library to interface with 30-pin simm ram using an atmega328p on Arduino
 Copyright (C) 2014 - Rafael Ignacio Zurita <rafaelignacio.zurita@gmail.com>
 LICENSE : read below.
 
+**This project got a got article in HACKADAY!** : http://hackaday.com/2014/04/09/using-simms-to-add-some-extra-ram-on-your-arduino-uno
+
 This work was inspired and based for the great hack to run Linux
 on a 8bit MCU by Dmitry Grinberg
 http://dmitry.gr/index.php?r=05.Projects&proj=07.%20Linux%20on%208bit
@@ -43,7 +45,8 @@ Usage
 -----
 
 WARNING: using this kind of RAM will put your Arduino CPU to refresh the SIMM RAM
-data most of the time. It means that your sketches (programs) could run slow.
+data part of the time. It means that your sketches (programs) could run 
+a little slower than before.
 Also, we need to use most of the Arduino pins to be soldered with SIMM RAM pins
 so there will be just few available extra pins for your project.
 
